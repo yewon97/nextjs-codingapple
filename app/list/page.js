@@ -6,9 +6,11 @@ export default function ListPage() {
   const [count, setCount] = useState([0, 0, 0]);
 
   const handleCount = (idx) => () => {
-    let copy = [...count];
-    copy[idx] += 1;
-    setCount(copy);
+    setCount((prev) => {
+      let copy = [...prev];
+      copy[idx] += 1;
+      return copy;
+    });
   };
 
   return (
