@@ -2,16 +2,12 @@ export default function WritePage() {
   return (
     <div>
       <h4>글작성</h4>
-      <form action="/api/test" method="POST">
-        <button type="submit">POST 버튼</button>
-      </form>
-      <form action="/api/test" method="GET">
-        <button type="submit">GET 버튼</button>
-      </form>
-      <form action="/api/time" method="GET">
+      <form action="/api/post/new" method="POST">
         <fieldset>
-          <legend>시간</legend>
-          <button type="submit">시간 GET 버튼</button>
+          <legend>글작성</legend>
+          <input name="title" placeholder="글제목" />
+          <input name="content" placeholder="글내용" />
+          <button type="submit">전송</button>
         </fieldset>
       </form>
     </div>
