@@ -12,7 +12,7 @@ export default async function ListPage() {
       {result.map((data) => {
         return (
           <div className="list-item" key={data._id.toString()}>
-            <Link href={`/detail/${data._id.toString()}`}>
+            <Link prefetch={false} href={`/detail/${data._id.toString()}`}>
               <h4>{data.title}</h4>
             </Link>
             <p>1월 1일</p>
