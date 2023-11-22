@@ -10,8 +10,8 @@ export default async function ListPage() {
     <div className="list-bg">
       {result.map((data) => {
         return (
-          <div className="list-item" key={data._id}>
-            <Link href={`/detail/${data._id}`}>
+          <div className="list-item" key={data._id.toString()}>
+            <Link href={`/detail/${data._id.toString()}`}>
               <h4>{data.title}</h4>
             </Link>
             <p>1월 1일</p>
