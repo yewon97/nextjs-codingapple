@@ -12,7 +12,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="navbar flex items-center">
+          <Link href="/" className="logo">
+            <h1>Appleforum</h1>
+          </Link>
+          <Link href="/list">List</Link>
+          <Link href="/write">Write</Link>
+        </div>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

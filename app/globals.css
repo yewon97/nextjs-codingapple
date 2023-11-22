@@ -7,6 +7,35 @@ a {
   color: black;
 }
 
+main {
+  margin: 0 40px;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+}
+
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 10px;

@@ -28,8 +28,8 @@ export default async function EditPage(props) {
             defaultValue={result.content}
             required
           />
+          <button type="submit">수정하기</button>
         </fieldset>
-        <button type="submit">수정하기</button>
       </form>
     </div>
   );
