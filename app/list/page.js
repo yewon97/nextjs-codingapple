@@ -15,6 +15,9 @@ export default async function ListPage() {
             <Link prefetch={false} href={`/detail/${data._id.toString()}`}>
               <h4>{data.title}</h4>
             </Link>
+            <Link href={'/edit/' + data._id.toString()} className="list-btn">
+              ✏️
+            </Link>
             <p>1월 1일</p>
             <DetailLink />
           </div>
