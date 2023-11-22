@@ -1,5 +1,6 @@
 import { connectDB } from '@/util/database';
 import Link from 'next/link';
+import DetailLink from './DetailLink';
 
 export default async function ListPage() {
   const client = await connectDB;
@@ -15,6 +16,7 @@ export default async function ListPage() {
               <h4>{data.title}</h4>
             </Link>
             <p>1월 1일</p>
+            <DetailLink />
           </div>
         );
       })}
