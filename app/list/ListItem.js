@@ -11,9 +11,12 @@ export default function ListItem({ result }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ _id: id }),
-    }).then(() => {
-      router.refresh();
-    });
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        alert(data);
+        router.refresh();
+      });
   };
 
   return (
