@@ -20,6 +20,7 @@ export default async function EditPage(props) {
             placeholder="글제목"
             defaultValue={result.title}
             required
+            autoFocus
           />
           <input
             type="text"
