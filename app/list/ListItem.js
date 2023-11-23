@@ -4,19 +4,15 @@ import { useRouter } from 'next/navigation';
 
 export default function ListItem({ result }) {
   const router = useRouter();
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => async () => {
     fetch('/api/post/delete', {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ _id: id }),
     })
       .then((data) => data.json())
-      .then((data) => {
-        alert(data);
-        router.refresh();
-      });
+      .then(alert)
+      .finally(() => router.refresh());
   };
 
   return (
@@ -31,12 +27,7 @@ export default function ListItem({ result }) {
               <Link href={'/edit/' + data._id} className="list-btn">
                 ✏️
               </Link>
-              <button
-                type="button"
-                onClick={() => {
-                  handleDelete(data._id);
-                }}
-              >
+              <button type="button" onClick={handleDelete(data._id)}>
                 🗑️
               </button>
             </div>

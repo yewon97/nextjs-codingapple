@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: black;
