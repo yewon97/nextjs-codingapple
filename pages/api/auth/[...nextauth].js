@@ -1,3 +1,5 @@
+import { connectDB } from '@/util/database';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import dotenv from 'dotenv';
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
@@ -11,5 +13,6 @@ export const authOptions = {
     }),
   ],
   secret: process.env.SECRETKEY,
+  adapter: MongoDBAdapter(connectDB), // redis써도됨
 };
 export default NextAuth(authOptions);
