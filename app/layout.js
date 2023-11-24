@@ -18,25 +18,29 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="navbar flex items-center">
-          <Link href="/" className="logo">
-            <h1>Appleforum</h1>
-          </Link>
-          <Link href="/list">List</Link>
-          <Link href="/write">Write</Link>
-          {session && (
-            <>
-              <section className="profile_box flex items-center gap-10">
-                <img
-                  className="profile_img"
-                  src={session.user.image}
-                  alt={session.user.name}
-                />
-                <p>{session.user.email}</p>
-              </section>
-            </>
-          )}
-          <LoginButton user={session?.user} />
+        <div className="navbar flex items-center justify-between">
+          <div>
+            <Link href="/" className="logo">
+              <h1>Appleforum</h1>
+            </Link>
+            <Link href="/list">List</Link>
+            <Link href="/write">Write</Link>
+          </div>
+          <div className="flex gap-10">
+            {session && (
+              <>
+                <section className="profile_box flex items-center gap-10">
+                  <img
+                    className="profile_img"
+                    src={session.user.image}
+                    alt={session.user.name}
+                  />
+                  <p>{session.user.email}</p>
+                </section>
+              </>
+            )}
+            <LoginButton user={session?.user} />
+          </div>
         </div>
 
         <main>{children}</main>
