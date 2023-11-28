@@ -25,6 +25,7 @@ export default async function RootLayout({ children }) {
             </Link>
             <Link href="/list">List</Link>
             <Link href="/write">Write</Link>
+            <Link href="/register">Register</Link>
           </div>
           <div className="flex gap-10">
             {session && (
