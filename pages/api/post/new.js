@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const session = await getServerSession(req, res, authOptions);
 
   if (session) {
-    req.body.author = session?.user.email;
+    req.body.author = session?.user?.email;
   }
 
   if (req.method === 'POST') {
@@ -17,7 +17,6 @@ export default async function handler(req, res) {
     try {
       let db = (await connectDB).db('forum');
       let result = await db.collection('post').insertOne(req.body);
-      // console.log('result: ', result);
       return res.redirect(302, '/list');
     } catch (error) {
       throw error;
