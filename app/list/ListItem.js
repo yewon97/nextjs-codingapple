@@ -27,7 +27,6 @@ export default function ListItem({ result }) {
               <Link href={'/edit/' + data._id} className="list-btn">
                 ✏️
               </Link>
-
               <button type="button" onClick={handleDelete(data._id)}>
                 🗑️
               </button>

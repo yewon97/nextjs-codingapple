@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         .collection('post')
         .findOne({ _id: new ObjectId(req.body._id) });
 
-      if (foundId.author === session?.user.email) {
+      if (foundId?.author === session?.user.email) {
         let result = await db
           .collection('post')
           .deleteOne({ _id: new ObjectId(req.body._id) });
@@ -21,8 +21,6 @@ export default async function handler(req, res) {
       } else {
         return res.status(500).json('현재유저와 작성자 불일치');
       }
-
-      res.status(200).json('삭제완료');
     } catch (error) {
       throw error;
     }
