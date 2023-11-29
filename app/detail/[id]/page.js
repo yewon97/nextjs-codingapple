@@ -14,7 +14,7 @@ export default async function DetailPage(props) {
       <h4>{result.title}</h4>
       <p>{result.content}</p>
       <hr />
-      <Comment />
+      <Comment _id={props.params.id} />
     </article>
   );
 }

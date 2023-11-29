@@ -2,16 +2,23 @@
 
 import { useState } from 'react';
 
-export default function Comment() {
+export default function Comment(props) {
   const [comment, setComment] = useState('');
   const handleChange = (e) => {
     const { value } = e.target;
     setComment(value);
   };
 
-  const handleClick = () => {
-    console.log('comment: ', comment);
-    // fetch('/URL', { method: 'POST', body: comment });
+  const handleClick = async () => {
+    try {
+      const response = await fetch('/api/comment/new', {
+        method: 'POST',
+        body: JSON.stringify({ comment, parent: props._id }),
+      });
+      const data = await response.json();
+    } catch (error) {
+      console.log('error: ', error);
+    }
   };
 
   return (
