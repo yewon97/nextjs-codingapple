@@ -6,7 +6,6 @@ import CommentList from './CommentList';
 export default function Comment(props) {
   const [comment, setComment] = useState('');
   const [list, setList] = useState([]);
-  console.log('list: ', list);
 
   const fetchCommentList = () => {
     fetch('/api/comment/list', {
